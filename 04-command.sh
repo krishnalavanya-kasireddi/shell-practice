@@ -1,3 +1,3 @@
 #!/bin/bash
-allcommands=$(History)
-echo "show all commands $allcommands"
+ALLCOMMANDS=$(History)
+echo "show all commands $ALLCOMMANDS"
