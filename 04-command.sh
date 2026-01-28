@@ -1,3 +1,3 @@
 #!/bin/bash
-ALLCOMMANDS=$(History)
-echo "show all commands $ALLCOMMANDS"
+directory=$(pwd)
+echo "show working directory $directory"
