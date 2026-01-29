@@ -1,7 +1,8 @@
 #!/bin/bash
 
-num=("$1" "$2")
+num1=$1
+num2=$2
 
-sum=$(($num[0] + $num[1]))
+sum=$($num1+$num2)
 
 echo "total number is $sum"
