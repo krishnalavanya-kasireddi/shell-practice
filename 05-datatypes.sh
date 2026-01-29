@@ -10,4 +10,4 @@ echo "total number is $sum"
 
 colors=("red" "black" "green" "yellow")
 
-echo " print all colors ${colors[@]}"
+echo "print all colors ${colors[@]}"
