@@ -26,7 +26,16 @@ validate $? "installing java"
 dnf install python -y &>> $logs_file
 validate $? "installing python"
 
-dnf install mysql -y &>> $logs_file
+dnf install https://repo.mysql.com/mysql80-community-release-el9-5.noarch.rpm -y &>> $logs_file
+validate $? "installing mysql repo"
+
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023 &>> $logs_file
+validate $? "importing mysql gpg key"
+
+dnf clean all &>> $logs_file
+dnf makecache &>> $logs_file
+
+dnf install mysql-community-server -y &>> $logs_file
 validate $? "installing mysql"
 
 
