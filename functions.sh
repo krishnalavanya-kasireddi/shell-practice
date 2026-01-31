@@ -1,10 +1,14 @@
 #!/bin/bash
 userid=$(id -u)
+logs_folder="/var/log/shell-script/"
+logs_file="/var/log/shell-script/$0.log"
 
 if [ $userid -ne 0 ]; then
     echo "please run the script with root user id"
     exit 1
 fi
+
+mkdir -p $logs_folder
 
 validate(){
     if [ $1 -ne 0 ]; then
@@ -16,13 +20,13 @@ else
 fi
 }
 
-dnf install java -y
+dnf install java -y &>> $logs_file
 validate $? "installing java"
 
-dnf install python -y
+dnf install python -y &>> $logs_file
 validate $? "installing python"
 
-dnf install mysql -y
+dnf install mysql -y &>> $logs_file
 validate $? "installing mysql"
 
 
