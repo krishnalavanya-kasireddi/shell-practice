@@ -23,5 +23,5 @@ dnf install python -y
 validate $? "installing python"
 
 dnf install mysql -y
-validate $? "installing mysql"
+validate $? "installing Mysql"
 
