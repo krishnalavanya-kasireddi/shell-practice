@@ -22,16 +22,7 @@ validate $? "installing java"
 dnf install python -y
 validate $? "installing python"
 
-dnf install https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm -y
-validate $? "installing mysql repo"
-
-rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
-validate $? "importing mysql gpg key"
-
-dnf clean all
-dnf makecache
-
-dnf install mysql-community-server -y
+dnf install mysql -y
 validate $? "installing mysql"
 
 
