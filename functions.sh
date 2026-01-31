@@ -22,6 +22,9 @@ validate $? "installing java"
 dnf install python -y
 validate $? "installing python"
 
-dnf install mysql -y
-validate $? "installing Mysql"
+dnf install https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm -y
+validate $? "installing mysql repo"
+
+dnf install mysql-community-server -y
+validate $? "installing mysql"
 
